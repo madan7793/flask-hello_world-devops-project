@@ -10,7 +10,7 @@ pipeline {
    stages {
        stage('Checkout') {
            steps {
-               checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/madan7793/flask-hello_world-devops-project.git']]])
+               checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/madan7793/flask-hello_world-devops-project.git']]])
            }
        }
        stage('Build') {
