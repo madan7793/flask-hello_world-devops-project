@@ -2,7 +2,7 @@ pipeline {
    agent any
   
    environment {
-       DOCKER_HUB_REPO = "shivammitra/flask-hello-world"
+       DOCKER_HUB_REPO = "madanmohan7793/flask-hello-world"
        CONTAINER_NAME = "flask-hello-world"
  
    }
@@ -10,7 +10,7 @@ pipeline {
    stages {
        stage('Checkout') {
            steps {
-               checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/codophobia/flask-hello-world-devops-project']]])
+               checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/madan7793/flask-hello_world-devops-project.git']]])
            }
        }
        stage('Build') {
