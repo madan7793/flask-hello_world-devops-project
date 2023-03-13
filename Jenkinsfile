@@ -2,9 +2,9 @@ pipeline {
    agent any
   
    environment {
-       DOCKER_HUB_REPO = "madanmohan7793/flask-hello-world"
+       DOCKER_HUB_REPO = "madanmohan7793/docker-image-test"
        CONTAINER_NAME = "flask-hello-world"
-       DOCKERHUB_CREDENTIALS=credentials('dockerhub-credentials')
+       DOCKERHUB_CREDENTIALS=credentials('dockerhub')
    }
   
    stages {
