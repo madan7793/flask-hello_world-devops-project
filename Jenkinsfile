@@ -27,9 +27,8 @@ pipeline {
            steps {
                echo 'Deploying....'
                sh 'scp -r -o StrictHostKeyChecking=no deployment.yaml service.yaml madan@192.168.43.189:~/'
-               sh 'ssh madan@192.168.43.189'
-               sh 'kubectl apply -f /home/madan/deployment.yaml'
-               sh 'kubectl apply -f /home/madan/service.yaml'
+               sh 'ssh madan192.168.43.189 kubectl apply -f ~/deployment.yaml'
+               sh 'ssh madan192.168.43.189 kubectl apply -f ~/service.yaml'
            }
        }
    }
