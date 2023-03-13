@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: flask-hello-world-deployment # name of the deployment
+ 
+spec:
+ template: # pod defintion
+   metadata:
+     name: flask-hello-world # name of the pod
+     labels:
+       app: flask-hello-world
+       tier: frontend
+   spec:
+     containers:
+       - name: flask-hello-world
+         image: madanmohan7793/flask-hello-world:flask-hello-world
+ replicas: 3
+ selector: # the pods which needs to be in the replicaset
+   matchLabels:
+     app: flask-hello-world
+     tier: frontend
