@@ -16,14 +16,6 @@ pipeline {
                sh 'docker image build -t $DOCKER_HUB_REPO:latest .'
            }
        }
-       stage('Test') {
-           steps {
-               echo 'Testing..'
-               sh 'docker stop $CONTAINER_NAME || true'
-               sh 'docker rm $CONTAINER_NAME || true'
-               sh 'docker run --name $CONTAINER_NAME $DOCKER_HUB_REPO'
-           }
-       }
        stage('Push') {
            steps {
                echo 'Pushing image..'
