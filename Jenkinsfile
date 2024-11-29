@@ -14,8 +14,8 @@ pipeline {
        stage('Deploy') {
            steps {
                echo 'Deploying....'
-               sh  kubectl apply -f /var/lib/jenkins/workspace/flask-hello-world-app/deployment.yaml
-               sh  kubectl apply -f /var/lib/jenkins/workspace/flask-hello-world-app/service.yaml
+               sh  'kubectl apply -f /var/lib/jenkins/workspace/flask-hello-world-app/deployment.yaml'
+               sh  'kubectl apply -f /var/lib/jenkins/workspace/flask-hello-world-app/service.yaml'
            }
        }
    
